@@ -14,7 +14,15 @@
   a{color:#0F6B5C; text-decoration:none;}
   a:hover{color:#0B4A40;}
   img,svg{max-width:100%;}
+  .dd{position:relative; display:inline-block;}
+  .dd-menu{position:absolute; top:100%; left:-14px; padding-top:12px; z-index:60;}
+  .dd summary{list-style:none; cursor:pointer;}
+  .dd summary::-webkit-details-marker{display:none;}
+  .dd-menu > div{background:#FFFFFF; border:1px solid #E5E0D8; border-radius:12px; box-shadow:0 10px 30px rgba(21,32,43,0.12); padding:6px; min-width:180px;}
+  .dd-menu a{display:block; padding:10px 14px; border-radius:8px; white-space:nowrap;}
+  .dd-menu a:hover{background:#EAF3F1;}
   @media (max-width:768px){
+    .dd-menu{left:0 !important;}
     [style*="padding:20px 48px"]{position:static !important; padding:12px 16px !important; flex-direction:column !important; align-items:flex-start !important; gap:10px !important;}
     [style*="padding:20px 48px"] > div:last-child{flex-wrap:wrap !important; gap:8px 16px !important;}
     h1{font-size:34px !important;}
@@ -40,7 +48,7 @@
     <div style="display:flex; align-items:center; gap:32px;">
       <a href="index.html#about" style="font-size:14px; font-weight:500; color:#15202B;">About</a>
       <a href="index.html#work" style="font-size:14px; font-weight:500; color:#15202B;">Work</a>
-      <a href="index.html#resume" style="font-size:14px; font-weight:500; color:#15202B;">Resume</a>
+      <details class="dd"><summary style="font-size:14px; font-weight:500; color:#15202B;">Experience ▾</summary><div class="dd-menu"><div><a onclick="this.closest('details').open=false" href="index.html#experience" style="font-size:14px; font-weight:500; color:#15202B;">Experience</a><a onclick="this.closest('details').open=false" href="index.html#certifications" style="font-size:14px; font-weight:500; color:#15202B;">Certifications</a><a onclick="this.closest('details').open=false" href="index.html#resume" style="font-size:14px; font-weight:500; color:#15202B;">Resume</a></div></div></details>
       <a href="projects.html" style="font-size:14px; font-weight:600; color:#0F6B5C;">Projects</a>
       <a href="personal.html" style="font-size:14px; font-weight:500; color:#15202B;">Personal</a>
       <a href="index.html#contact" style="display:inline-block; padding:10px 20px; background:#0F6B5C; color:#FFFFFF; border-radius:999px; font-size:14px; font-weight:600;">Let's Talk →</a>
